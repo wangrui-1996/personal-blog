@@ -14,10 +14,6 @@ export default function BlogPostPage() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  useEffect(() => {
-    loadPost()
-  }, [slug, loadPost])
-
   const loadPost = useCallback(async () => {
     try {
       setLoading(true)
@@ -35,6 +31,10 @@ export default function BlogPostPage() {
       setLoading(false)
     }
   }, [slug])
+
+  useEffect(() => {
+    loadPost()
+  }, [loadPost])
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('zh-CN', {

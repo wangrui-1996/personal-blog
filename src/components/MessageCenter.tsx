@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import {
   MessageCircle,
   Search,
@@ -82,19 +82,19 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     }
   }
 
-  const handleSearch = async () => {
+  const handleSearch = useCallback(async () => {
     if (!searchQuery.trim()) {
       handleFilter(selectedFilter)
       return
     }
-    
+
     try {
       const searchResults = await searchMessages(searchQuery)
       setMessages(searchResults)
     } catch (error) {
       console.error('Failed to search messages:', error)
     }
-  }
+  }, [searchQuery, selectedFilter])
 
   const handleMarkAsRead = async (messageId: string, event: React.MouseEvent) => {
     event.stopPropagation()
