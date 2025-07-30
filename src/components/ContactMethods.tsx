@@ -120,7 +120,7 @@ export default function ContactMethods({ showTitle = true, layout = 'horizontal'
             
             <div className="mt-3 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
               <p className="text-xs text-blue-600 dark:text-blue-400">
-                💡 提示：点击"添加好友"会尝试打开QQ客户端
+                💡 提示：点击&ldquo;添加好友&rdquo;会尝试打开QQ客户端
               </p>
             </div>
           </div>

@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌟 个人博客 - 完整内容管理系统
 
-## Getting Started
+一个基于 Next.js 15 构建的现代化个人博客，具备完整的内容管理功能。
 
-First, run the development server:
+## ✨ 主要特性
 
+### 🎨 博客管理
+- ✅ **文章管理**：新建、编辑、删除、预览博客文章
+- ✅ **Markdown 支持**：完整的 Markdown 编辑和渲染
+- ✅ **标签系统**：文章分类和标签管理
+- ✅ **响应式设计**：适配各种设备屏幕
+
+### 📝 动态管理
+- ✅ **发布动态**：分享日常生活和想法
+- ✅ **编辑动态**：修改已发布的动态内容
+- ✅ **删除动态**：管理动态列表
+- ✅ **多媒体支持**：位置、心情、天气、标签
+
+### 🔐 权限控制
+- ✅ **博主登录**：安全的管理员认证
+- ✅ **访客模式**：只读访问博客内容
+- ✅ **状态同步**：多标签页状态同步
+
+### 💬 联系功能
+- ✅ **多种联系方式**：QQ、微信、邮件
+- ✅ **消息中心**：统一的消息管理
+- ✅ **实时通知**：新消息提醒
+
+## 🚀 技术栈
+
+- **框架**：Next.js 15 (App Router)
+- **语言**：TypeScript
+- **样式**：Tailwind CSS 4
+- **图标**：Lucide React
+- **部署**：Vercel
+
+## 📦 快速开始
+
+### 安装依赖
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 启动开发服务器
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+访问 [http://localhost:3000](http://localhost:3000) 查看网站。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 构建生产版本
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## 🎯 功能演示
 
-To learn more about Next.js, take a look at the following resources:
+### 博主功能
+1. **登录**：点击"博主登录"，使用默认凭据登录
+2. **博客管理**：点击"博客管理"按钮管理文章
+3. **发布动态**：点击"发布动态"分享生活瞬间
+4. **编辑内容**：在动态卡片上点击管理菜单
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 访客体验
+- 浏览博客文章列表和详情
+- 查看动态时间线
+- 通过联系方式与博主沟通
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 配置说明
 
-## Deploy on Vercel
+### 默认登录凭据
+- 用户名：`admin`
+- 密码：`admin123`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 自定义配置
+- 修改 `src/lib/auth.ts` 中的登录凭据
+- 在 `src/lib/blog-data.ts` 中添加博客文章
+- 在 `src/lib/moments.ts` 中管理动态数据
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📱 响应式设计
+
+- 📱 **移动端**：完美适配手机屏幕
+- 💻 **桌面端**：充分利用大屏幕空间
+- 🌙 **深色模式**：支持系统主题切换
+
+## 🚀 部署指南
+
+### Vercel 部署（推荐）
+1. Fork 或下载此项目
+2. 推送到你的 GitHub 仓库
+3. 在 [Vercel](https://vercel.com) 中导入项目
+4. 自动部署完成
+
+### 其他平台
+- **Netlify**：支持拖拽部署
+- **Railway**：一键部署
+- **自托管**：使用 Docker 或 PM2
+
+## 📄 许可证
+
+MIT License - 可自由使用和修改
+
+## 🤝 贡献
+
+欢迎提交 Issue 和 Pull Request！
+
+---
+
+**享受你的个人博客之旅！** 🎉

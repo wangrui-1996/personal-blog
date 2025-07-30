@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { X, Save, MapPin, Tag, Smile, Cloud } from 'lucide-react'
 import { Moment, MoodType, WeatherCondition } from '@/lib/moments'
 

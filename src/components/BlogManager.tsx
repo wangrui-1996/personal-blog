@@ -246,7 +246,7 @@ export default function BlogManager({ onClose }: BlogManagerProps) {
               暂无博客文章
             </h3>
             <p className="text-gray-500 dark:text-gray-400 mb-4">
-              点击"新建文章"开始创作你的第一篇博客
+              点击&ldquo;新建文章&rdquo;开始创作你的第一篇博客
             </p>
             <button
               onClick={handleNewPost}

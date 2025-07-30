@@ -162,7 +162,7 @@ function saveMomentsToStorage(moments: Moment[]): void {
 }
 
 // 动态加载的moments数组
-export let mockMoments: Moment[] = loadMomentsFromStorage()
+export const mockMoments: Moment[] = loadMomentsFromStorage()
 
 // 获取所有动态
 export async function getAllMoments(): Promise<Moment[]> {

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { BookOpen, Calendar, User, Plus, Mail, Settings } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import MomentCard from '@/components/MomentCard'
@@ -53,7 +54,7 @@ export default function Home() {
     ))
   }
 
-  const handleComment = (_id: string, _comment: string) => {
+  const handleComment = () => {
     // 刷新数据以获取最新评论
     loadMoments()
   }
@@ -98,13 +99,13 @@ export default function Home() {
 
         {/* 快捷导航 */}
         <div className={`grid ${mounted && isAdmin ? 'grid-cols-3' : 'grid-cols-1'} gap-4 mb-6`}>
-          <a
+          <Link
             href="/blog"
-            className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center"
+            className="bg-white dark:bg-gray-800 p-4 rounded-xl shadow-md hover:shadow-lg transition-shadow text-center block"
           >
             <BookOpen className="w-8 h-8 text-blue-600 mx-auto mb-2" />
             <span className="text-sm font-medium text-gray-900 dark:text-white">技术博客</span>
-          </a>
+          </Link>
           {mounted && isAdmin && (
             <>
               <button
