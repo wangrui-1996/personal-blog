@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function HealthCheck() {
   return (
     <div style={{ 
@@ -27,7 +29,7 @@ export default function HealthCheck() {
           <p><strong>状态:</strong> 🟢 在线</p>
           <p><strong>版本:</strong> Next.js 15.4.5</p>
         </div>
-        <a 
+        <Link
           href="/"
           style={{
             display: 'inline-block',
@@ -40,8 +42,8 @@ export default function HealthCheck() {
           }}
         >
           返回首页
-        </a>
-        <a 
+        </Link>
+        <Link
           href="/test"
           style={{
             display: 'inline-block',
@@ -53,7 +55,7 @@ export default function HealthCheck() {
           }}
         >
           测试页面
-        </a>
+        </Link>
       </div>
     </div>
   )
