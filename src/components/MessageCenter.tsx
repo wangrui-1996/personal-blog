@@ -42,6 +42,18 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
   const [loading, setLoading] = useState(true)
   const [selectedMessage, setSelectedMessage] = useState<UnifiedMessage | null>(null)
 
+  // 先定义 handleFilter
+  const handleFilter = useCallback(async (type: 'all' | 'qq' | 'wechat' | 'email') => {
+    try {
+      const filteredMessages = await getMessagesByType(type)
+      setMessages(filteredMessages)
+      setSelectedFilter(type)
+    } catch (error) {
+      console.error('Failed to filter messages:', error)
+    }
+  }, [])
+
+  // 再定义 handleSearch，它依赖 handleFilter
   const handleSearch = useCallback(async () => {
     if (!searchQuery.trim()) {
       handleFilter(selectedFilter)
@@ -66,7 +78,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     } else {
       handleFilter(selectedFilter)
     }
-  }, [searchQuery, selectedFilter, handleSearch])
+  }, [searchQuery, selectedFilter, handleSearch, handleFilter])
 
   const loadData = async () => {
     setLoading(true)
@@ -85,16 +97,6 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
       setLoading(false)
     }
   }
-
-  const handleFilter = useCallback(async (type: 'all' | 'qq' | 'wechat' | 'email') => {
-    try {
-      const filteredMessages = await getMessagesByType(type)
-      setMessages(filteredMessages)
-      setSelectedFilter(type)
-    } catch (error) {
-      console.error('Failed to filter messages:', error)
-    }
-  }, [])
 
   const handleMarkAsRead = async (messageId: string, event: React.MouseEvent) => {
     event.stopPropagation()
