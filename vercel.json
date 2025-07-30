@@ -1,16 +1,9 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "regions": ["hkg1"],
   "functions": {
     "app/**/*.{js,ts,tsx}": {
       "maxDuration": 30
     }
-  },
-  "rewrites": [
-    {
-      "source": "/blog/:slug",
-      "destination": "/blog/:slug"
-    }
-  ]
+  }
 }
