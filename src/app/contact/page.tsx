@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
 import { Send } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 import ContactMethods from '@/components/ContactMethods'

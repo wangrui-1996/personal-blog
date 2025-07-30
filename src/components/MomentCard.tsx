@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 import { Heart, MessageCircle, MapPin, Clock, Tag, Edit, Trash2, MoreHorizontal } from 'lucide-react'
 import { Moment, formatTime, getMoodIcon, getMoodText, likeMoment, addComment } from '@/lib/moments'
 import { useAuth } from '@/lib/auth'

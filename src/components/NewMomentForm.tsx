@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Camera, MapPin, Smile, Tag, Send, X } from 'lucide-react'
-import { Moment, addMoment, getMoodIcon, getMoodText } from '@/lib/moments'
+import { addMoment, getMoodIcon, getMoodText } from '@/lib/moments'
 
 interface NewMomentFormProps {
   onMomentAdded?: () => void
@@ -24,10 +24,10 @@ export default function NewMomentForm({ onMomentAdded }: NewMomentFormProps) {
 
     setIsSubmitting(true)
     try {
-      const newMoment = await addMoment({
+      await addMoment({
         content: content.trim(),
         location: location.trim() || undefined,
-        mood: selectedMood as any || undefined,
+        mood: selectedMood || undefined,
         tags: tags.length > 0 ? tags : undefined
       })
       

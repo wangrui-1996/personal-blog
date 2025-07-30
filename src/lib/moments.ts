@@ -43,7 +43,7 @@ const defaultMoments: Moment[] = [
     created_at: '2024-01-20T10:30:00Z',
     likes: 12,
     weather: {
-      condition: '晴朗',
+      condition: 'sunny',
       temperature: 22,
       icon: '☀️'
     },
@@ -127,7 +127,7 @@ const defaultMoments: Moment[] = [
     created_at: '2024-01-16T07:30:00Z',
     likes: 10,
     weather: {
-      condition: '多云',
+      condition: 'cloudy',
       temperature: 18,
       icon: '⛅'
     }

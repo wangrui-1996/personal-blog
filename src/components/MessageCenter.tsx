@@ -3,16 +3,13 @@
 import { useState, useEffect } from 'react'
 import {
   MessageCircle,
-  Mail,
   Search,
-  Filter,
   Trash2,
   Check,
   X,
   Minimize2,
   Settings,
-  Bell,
-  BellOff
+  Bell
 } from 'lucide-react'
 import {
   UnifiedMessage,
@@ -55,7 +52,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     } else {
       handleFilter(selectedFilter)
     }
-  }, [searchQuery, selectedFilter])
+  }, [searchQuery, selectedFilter, handleSearch])
 
   const loadData = async () => {
     setLoading(true)
@@ -204,7 +201,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
           ].map((filter) => (
             <button
               key={filter.key}
-              onClick={() => handleFilter(filter.key as any)}
+              onClick={() => handleFilter(filter.key as 'all' | 'qq' | 'wechat' | 'email')}
               className={`flex items-center space-x-1 px-3 py-2 rounded-lg transition-colors whitespace-nowrap ${
                 selectedFilter === filter.key
                   ? 'bg-blue-500 text-white'
@@ -299,7 +296,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
                 ].map((filter) => (
                   <button
                     key={filter.key}
-                    onClick={() => handleFilter(filter.key as any)}
+                    onClick={() => handleFilter(filter.key as 'all' | 'qq' | 'wechat' | 'email')}
                     className={`w-full text-left px-3 py-2 rounded-lg transition-colors flex items-center space-x-2 ${
                       selectedFilter === filter.key
                         ? 'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300'

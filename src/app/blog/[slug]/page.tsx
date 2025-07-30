@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { useParams } from 'next/navigation'
 import Link from 'next/link'
 import { Calendar, Clock, Tag, ArrowLeft, User } from 'lucide-react'
@@ -16,9 +16,9 @@ export default function BlogPostPage() {
 
   useEffect(() => {
     loadPost()
-  }, [slug])
+  }, [slug, loadPost])
 
-  const loadPost = async () => {
+  const loadPost = useCallback(async () => {
     try {
       setLoading(true)
       setError(null)
@@ -34,7 +34,7 @@ export default function BlogPostPage() {
     } finally {
       setLoading(false)
     }
-  }
+  }, [slug])
 
   const formatDate = (dateString: string) => {
     return new Date(dateString).toLocaleDateString('zh-CN', {

@@ -24,17 +24,17 @@ export interface MessageStats {
 export interface PlatformStatus {
   qq: {
     connected: boolean
-    user?: any
+    user?: Record<string, unknown>
     unreadCount: number
   }
   wechat: {
     connected: boolean
-    user?: any
+    user?: Record<string, unknown>
     unreadCount: number
   }
   email: {
     connected: boolean
-    account?: any
+    account?: Record<string, unknown>
     unreadCount: number
   }
 }

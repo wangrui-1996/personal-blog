@@ -15,13 +15,12 @@ import {
   Inbox,
   Edit
 } from 'lucide-react'
-import { 
-  EmailAccount, 
-  EmailMessage, 
+import {
+  EmailAccount,
+  EmailMessage,
   EmailFolder,
   getEmailFolders,
   getEmails,
-  getEmailById,
   sendEmail,
   markEmailAsRead,
   toggleEmailStar,

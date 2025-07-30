@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowLeft, User, Heart, Code, Book, Camera, Music } from 'lucide-react'
+import { User, Heart, Code, Book, Camera, Music } from 'lucide-react'
 import Navigation from '@/components/Navigation'
 
 export default function AboutPage() {
