@@ -54,7 +54,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     } catch (error) {
       console.error('Failed to search messages:', error)
     }
-  }, [searchQuery, selectedFilter])
+  }, [searchQuery, selectedFilter, handleFilter])
 
   useEffect(() => {
     loadData()
@@ -86,7 +86,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     }
   }
 
-  const handleFilter = async (type: 'all' | 'qq' | 'wechat' | 'email') => {
+  const handleFilter = useCallback(async (type: 'all' | 'qq' | 'wechat' | 'email') => {
     try {
       const filteredMessages = await getMessagesByType(type)
       setMessages(filteredMessages)
@@ -94,7 +94,7 @@ export default function MessageCenter({ onClose, onMinimize }: MessageCenterProp
     } catch (error) {
       console.error('Failed to filter messages:', error)
     }
-  }
+  }, [])
 
   const handleMarkAsRead = async (messageId: string, event: React.MouseEvent) => {
     event.stopPropagation()

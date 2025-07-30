@@ -16,7 +16,7 @@ const eslintConfig = [
       "@typescript-eslint/no-unused-vars": "warn",
       "@typescript-eslint/no-explicit-any": "warn",
       "react-hooks/exhaustive-deps": "warn",
-      "jsx-a11y/alt-text": "warn",
+      "jsx-a11y/alt-text": "off", // 关闭 alt-text 警告，因为我们使用的是图标组件
       "react/no-unescaped-entities": "warn",
       "prefer-const": "warn"
     }

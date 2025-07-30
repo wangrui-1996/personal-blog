@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Camera, MapPin, Smile, Tag, Send, X } from 'lucide-react'
-import { addMoment, getMoodIcon, getMoodText } from '@/lib/moments'
+import { addMoment, getMoodIcon, getMoodText, MoodType } from '@/lib/moments'
 
 interface NewMomentFormProps {
   onMomentAdded?: () => void
@@ -14,7 +14,7 @@ export default function NewMomentForm({ onMomentAdded }: NewMomentFormProps) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [content, setContent] = useState('')
   const [location, setLocation] = useState('')
-  const [selectedMood, setSelectedMood] = useState<string>('')
+  const [selectedMood, setSelectedMood] = useState<MoodType | ''>('')
   const [tags, setTags] = useState<string[]>([])
   const [newTag, setNewTag] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)

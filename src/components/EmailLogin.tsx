@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Mail, LogOut, Settings, User, Eye, EyeOff, Inbox } from 'lucide-react'
+import { Mail, LogOut, Settings, Eye, EyeOff, Inbox } from 'lucide-react'
 import { EmailAccount, emailLogin, emailLogout, getProviderIcon } from '@/lib/email-integration'
 import EmailClient from './EmailClient'
 
