@@ -1,18 +1,23 @@
+export type MoodType = 'happy' | 'sad' | 'excited' | 'thoughtful' | 'relaxed' | 'busy' | 'calm' | 'grateful' | 'motivated' | 'creative' | 'tired'
+
+export type WeatherCondition = 'sunny' | 'cloudy' | 'rainy' | 'snowy' | 'windy'
+
 export interface Moment {
   id: string
   content: string
   images?: string[]
   location?: string
-  mood?: 'happy' | 'sad' | 'excited' | 'thoughtful' | 'relaxed' | 'busy'
+  mood?: MoodType
   tags?: string[]
   created_at: string
   likes?: number
   comments?: Comment[]
   weather?: {
-    condition: string
+    condition: WeatherCondition
     temperature: number
     icon: string
   }
+  updated_at?: string
 }
 
 export interface Comment {
