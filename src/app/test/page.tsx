@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export default function TestPage() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
@@ -18,12 +20,12 @@ export default function TestPage() {
           </ul>
         </div>
         <div className="mt-8">
-          <a 
+          <Link
             href="/"
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             返回首页
-          </a>
+          </Link>
         </div>
       </div>
     </div>
